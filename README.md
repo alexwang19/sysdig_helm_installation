@@ -1,11 +1,12 @@
-## Sysdig Installation Steps
+# Sysdig Installation Steps
 
 1. ```helm repo add sysdig https://charts.sysdig.com```
 
 2. ```helm repo update```
 
-4. 
-```helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
+3.
+```
+helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)>
@@ -29,8 +30,8 @@ sysdig/sysdig-deploy
 --set agent.image.repository=<Internal Sysdig Agent Image> \
 --set agent.image.pullSecrets=<Internal Registry Pull Secret> \
 --set nodeAnalyzer.image.registry=<Internal Registry> \
---set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image, REMOVE IF NOT USING INTERNAL REGISTRY> \
---set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret, REMOVE IF NOT USING INTERNAL REGISTRY> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image> \
+--set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
 ```
 
 ## For images running in your cluster that are larger than 2GB, include the following parameter with largest size of image in your cluster:
@@ -42,7 +43,7 @@ sysdig/sysdig-deploy
 kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort -nr | head -1
 ```
 
-## If modifying maxImageSize, please also adjust ephemeral storage following below formal to accommodate large image:
+## If modifying maxImageSizeAllowed, please also adjust ephemeral storage following below formal to accommodate large image:
 
 * The ephemeral storage request for the sysdig vuln-runtime-scanner should be set to 2Gi (the default) or 1.5 times the size of the largest image on the cluster, whichever is greater
 ```
