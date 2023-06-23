@@ -4,7 +4,8 @@
 
 2. ```helm repo update```
 
-4. ```helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
+4. ```
+helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)>
@@ -16,7 +17,8 @@
 --set agent.sysdig.settings.http_proxy.proxy_host=<Proxy Host> \
 --set agent.priorityClassName=<Priority class for agent ds, REMOVE IF NOT REQUIRED>
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag> \
-sysdig/sysdig-deploy```
+sysdig/sysdig-deploy
+```
 
 
 # Additional Configurations
