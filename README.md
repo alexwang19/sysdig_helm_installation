@@ -22,7 +22,7 @@ sysdig/sysdig-deploy
 
 # Additional Configurations
 
-## If using internal image registry, include below parameters:
+## If using internal image registry, include below configurations:
 ```
 --set agent.image.registry=<Internal Registry> \
 --set agent.image.repository=<Internal Sysdig Agent Image> \
@@ -32,13 +32,13 @@ sysdig/sysdig-deploy
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
 ```
 
-## To override image tag for agent and runtime scanner, add following parameters with specific versions:
+## To override image tag for agent and runtime scanner, add following configurations with specific versions:
 ```
 --set agent.image.tag=<Sysdig Agent Tag> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag> \
 ```
 
-## For images running in your cluster that are larger than 2GB, include the following parameter with largest size of image in your cluster:
+## For images running in your cluster that are larger than 2GB, include the following configurations with largest size of image in your cluster:
 ```
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.settings.maxImageSizeAllowed=<largest image size> \
 ```
@@ -47,13 +47,13 @@ sysdig/sysdig-deploy
 kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort -nr | head -1
 ```
 
-## If modifying maxImageSizeAllowed, please also adjust ephemeral storage following below formal to accommodate large image:
+## If modifying maxImageSizeAllowed, please also adjust ephemeral storage following below format to accommodate large image:
 
 * The ephemeral storage request for the sysdig vuln-runtime-scanner should be set to 2Gi (the default) or 1.5 times the size of the largest image on the cluster, whichever is greater
 ```
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.resources.requests.ephemeral-storage=<storage size request in bytes> \
 ```
-## If SElinux or Secure Boot is enabled, add the following setting(not very common):
+## If SElinux or Secure Boot is enabled, add the following configuration(not very common):
 ```
 --set agent.ebpf.enabled=true \
 ```
