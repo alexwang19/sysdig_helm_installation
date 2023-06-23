@@ -14,7 +14,8 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
 --set agent.sysdig.settings.http_proxy.proxy_port=<Proxy Port> \
 --set agent.sysdig.settings.http_proxy.proxy_host=<Proxy Host> \
---set agent.priorityClassName=<Priority class for agent ds, REMOVE IF NOT REQUIRED>
+--set agent.priorityClassName=<Priority class for agent ds, REMOVE IF NOT REQUIRED> \
+-f static-values.yaml \
 sysdig/sysdig-deploy
 ```
 
