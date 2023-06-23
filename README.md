@@ -4,9 +4,7 @@
 
 2. ```helm repo update```
 
-4. 
-```
-helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
+4. ```helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)>
