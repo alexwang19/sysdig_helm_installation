@@ -12,11 +12,9 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy>" \
---set agent.image.tag=<Sysdig Agent Tag> \
 --set agent.sysdig.settings.http_proxy.proxy_port=<Proxy Port> \
 --set agent.sysdig.settings.http_proxy.proxy_host=<Proxy Host> \
 --set agent.priorityClassName=<Priority class for agent ds, REMOVE IF NOT REQUIRED>
---set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag> \
 sysdig/sysdig-deploy
 ```
 
@@ -31,6 +29,12 @@ sysdig/sysdig-deploy
 --set nodeAnalyzer.image.registry=<Internal Registry> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image> \
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
+```
+
+## To override image tag for agent and runtime scanner, add following parameters with specific versions:
+```
+--set agent.image.tag=<Sysdig Agent Tag> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag> \
 ```
 
 ## For images running in your cluster that are larger than 2GB, include the following parameter with largest size of image in your cluster:
