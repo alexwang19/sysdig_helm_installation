@@ -1,11 +1,10 @@
 # Sysdig Installation Steps
 
-1. ```helm repo add sysdig https://charts.sysdig.com```
-
-2. ```helm repo update```
-
-3.
 ```
+helm repo add sysdig https://charts.sysdig.com
+
+helm repo update
+
 helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
