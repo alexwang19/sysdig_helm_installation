@@ -20,22 +20,22 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 ```
 
 ### Options Available
-
+1. [Basic installation](#basic-installation) (1.No,2.No,3.No,4.No,5.No)
 1. [Install with proxy](#installation-with-proxy)(1.Yes,2.No,3.No,4.No,5.No)
 2. [Installation with Proxy and Custom Image Repo(Internal Registry)](#installation-with-proxy-and-custom-image-repointernal-registry)(1.Yes,2.Yes,3.No,4.No,5.No)
-3. [Basic installation with PriorityClass](#basic-installation-with-priorityclass)(1.No,2.No,3.No,4.Yes,5.No)
+3. [Installation with PriorityClass](#installation-with-priorityclass)(1.No,2.No,3.No,4.Yes,5.No)
 4. [Installation with Proxy with PriorityClass](#installation-with-proxy-with-priorityclass)(1.Yes,2.No,3.No,4.Yes,5.No)
 5. [Installation with Proxy and Custom Image Repo(Internal Registry) with PriorityClass](#installation-with-proxy-and-custom-image-repointernal-registry-with-priorityclass) (1.Yes,2.Yes,3.No,4.Yes,5.No)
-6. [Basic installation with EBF enabled](#basic-installation-with-ebf-enabled)(1.No,2.No,3.Yes,4.No,5.No)
+6. [Installation with EBF enabled](#installation-with-ebf-enabled)(1.No,2.No,3.Yes,4.No,5.No)
 7. [Installation with Proxy with EBF enabled](#installation-with-proxy-with-ebf-enabled)(1.Yes,2.No,3.Yes,4.No,5.No)
 8. [Installation with Proxy and Custom Image Repo(Internal Registry) with EBF enabled](#installation-with-proxy-and-custom-image-repointernal-registry-with-ebf-enabled)(1.Yes,2.Yes,3.Yes,4.No,5.No)
-9. [Basic installation with maxImageSize and ephemeralStorage Increase](#basic-installation-with-maximagesize-and-ephemeralstorage-increase)(1.No,2.No,3.No,4.No,5.Yes)
+9. [Installation with maxImageSize and ephemeralStorage Increase](#installation-with-maximagesize-and-ephemeralstorage-increase)(1.No,2.No,3.No,4.No,5.Yes)
 10. [Installation with Proxy with maxImageSize and ephemeralStorage Increase](#installation-with-proxy-with-maximagesize-and-ephemeralstorage-increase)(1.Yes,2.No,3.No,4.No,5.Yes)
-11. [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase) (1.Yes,2.Yes,3.No,4.No,5.Yes)
-12. [Basic installation with maxImageSize and ephemeralStorage Increase and EBF enabled](#basic-installation-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled) (1.No,2.No,3.Yes,4.No,5.Yes)
+11. [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase) (1.Yes,2.No,3.No,4.No,5.Yes)
+12. [Installation with maxImageSize and ephemeralStorage Increase and EBF enabled](#installation-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled) (1.No,2.No,3.Yes,4.No,5.Yes)
 13. [Installation with Proxy with maxImageSize and ephemeralStorage Increase and EBF enabled](#installation-with-proxy-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled) (1.Yes,2.No,3.Yes,4.No,5.Yes)
 14. [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and EBF enabled](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled) (1.Yes,2.Yes,3.Yes,4.No,5.Yes)
-15. [Basic installation with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#basic-installation-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass) (1.No,2.No,3.Yes,4.Yes,5.Yes)
+15. [Installation with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#installation-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass) (1.No,2.No,3.Yes,4.Yes,5.Yes)
 16. [Installation with Proxy with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#installation-with-proxy-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass)(1.Yes,2.No,3.Yes,4.Yes,5.Yes)
 17. [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass)(1.Yes,2.Yes,3.Yes,4.Yes,5.Yes)
 
@@ -101,7 +101,7 @@ sysdig/sysdig-deploy
 
 -----------------------
 
-## Basic installation with PriorityClass
+## Installation with PriorityClass
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -164,7 +164,7 @@ sysdig/sysdig-deploy
 
 -----------------------
 
-## Basic installation with EBF enabled
+## Installation with EBF enabled
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -237,7 +237,7 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 * The ephemeral storage request for the sysdig vuln-runtime-scanner should be set to 2Gi (the default) or 1.5 times the size of the largest image on the cluster, whichever is greater
 
 
-## Basic installation with maxImageSize and ephemeralStorage Increase
+## Installation with maxImageSize and ephemeralStorage Increase
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -314,7 +314,7 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 * The ephemeral storage request for the sysdig vuln-runtime-scanner should be set to 2Gi (the default) or 1.5 times the size of the largest image on the cluster, whichever is greater
 
 
-## Basic installation with maxImageSize and ephemeralStorage Increase and EBF enabled
+## Installation with maxImageSize and ephemeralStorage Increase and EBF enabled
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -394,7 +394,7 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 * The ephemeral storage request for the sysdig vuln-runtime-scanner should be set to 2Gi (the default) or 1.5 times the size of the largest image on the cluster, whichever is greater
 
 
-## Basic installation with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass
+## Installation with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass
 ```
 helm repo add sysdig https://charts.sysdig.com
 
