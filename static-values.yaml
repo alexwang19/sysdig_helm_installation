@@ -23,7 +23,6 @@ nodeAnalyzer:
     hostScanner:
       deploy: false
     runtimeScanner:
-      deploy: true
       image:
         tag: 1.5
       settings:

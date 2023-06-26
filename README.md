@@ -10,6 +10,10 @@ example:(1.Yes,2.No,3.No,4.Yes,5.No)
 </p>
 
 1. Do you need proxy enabled?
+- Note: If using proxy, please make sure to escape commas for no_proxy list like below:
+```
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 2. Are you using a custom image repo (internal registry)?
 3. Do you have SELinux or Secure Boot enabled(not common)?
 4. Do you need to specify a priority class(e.g. system-node-critical)?
@@ -20,7 +24,7 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 ```
 - If image size is greater than 2GB, please also adjust ephemeral storage following below format to accommodate large image:
 
-* The ephemeral storage request for the sysdig vuln-runtime-scanner should be set to 2Gi (the default) or 1.5 times the size of the largest image on the cluster, whichever is greater
+- The ephemeral storage request for the sysdig vuln-runtime-scanner should be set to 2Gi (the default) or 1.5 times the size of the largest image on the cluster, whichever is greater
 
 ### Installation Options
 1. [Basic installation](#basic-installation) (1.No,2.No,3.No,4.No,5.No)
@@ -46,6 +50,10 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 -------------------------------------
 
 ## Basic installation
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags like below:
+```
+cluster:test-clusterd\,id:999999\,deployment-id:999999
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -55,6 +63,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="<comma delimited list of tags> example: cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 -f static-values.yaml \
 sysdig/sysdig-deploy
 ```
@@ -69,6 +78,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)>
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -87,7 +97,8 @@ helm repo update
 helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
---set global.sysdig.region=<Sysdig Region(default us3)>
+--set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -117,6 +128,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set agent.priorityClassName=<Priority class for agent ds, e.g: system-node-critical> \
 -f static-values.yaml \
 sysdig/sysdig-deploy
@@ -131,7 +143,8 @@ helm repo update
 helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
---set global.sysdig.region=<Sysdig Region(default us3)>
+--set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -151,7 +164,8 @@ helm repo update
 helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
---set global.sysdig.region=<Sysdig Region(default us3)>
+--set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -182,6 +196,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set agent.ebpf.enabled=true \
 -f static-values.yaml \
 sysdig/sysdig-deploy
@@ -197,6 +212,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -217,6 +233,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -245,6 +262,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -280,6 +298,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.settings.maxImageSizeAllowed=<largest image size> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.resources.requests.ephemeral-storage=<storage size request in bytes> \
 -f static-values.yaml \
@@ -296,6 +315,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -317,6 +337,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -352,6 +373,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.settings.maxImageSizeAllowed=<largest image size> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.resources.requests.ephemeral-storage=<storage size request in bytes> \
 --set agent.ebpf.enabled=true \
@@ -369,6 +391,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -391,6 +414,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -427,6 +451,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.settings.maxImageSizeAllowed=<largest image size> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.resources.requests.ephemeral-storage=<storage size request in bytes> \
 --set agent.ebpf.enabled=true \
@@ -445,6 +470,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
@@ -468,6 +494,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.httpProxy=<Http Proxy> \
 --set global.proxy.httpsProxy=<Https Proxy> \
 --set global.proxy.noProxy="<No Proxy, comma delimited list>" \
