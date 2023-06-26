@@ -54,6 +54,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 ```
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -74,6 +75,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -99,6 +101,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -133,6 +136,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 ```
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -154,6 +158,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -180,6 +185,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -215,6 +221,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 ```
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -236,6 +243,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -262,6 +270,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -296,6 +305,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -336,6 +346,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 ```
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -358,6 +369,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -385,6 +397,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -425,6 +438,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 ```
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -448,6 +462,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -476,6 +491,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -517,6 +533,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 ```
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -541,6 +558,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -570,6 +588,7 @@ NOTE: Please make sure to escape commas for comma delimited lists for cluster ta
 --set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 --set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
 ```
+#### Install commands:
 ```
 helm repo add sysdig https://charts.sysdig.com
 
