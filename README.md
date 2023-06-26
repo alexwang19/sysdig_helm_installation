@@ -14,7 +14,7 @@ example:(1.Yes,2.No,3.No,4.Yes,5.No)
 3. Do you have SELinux or Secure Boot enabled(not common)?
 4. Do you need to specify a priority class(e.g. system-node-critical)?
 5. Is the largest image running in your cluster larger than 2GB?
-- You can find largest image size by running this command:
+- For question 5: You can find largest image size by running this command:
 ```
 kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort -nr | head -1
 ```
