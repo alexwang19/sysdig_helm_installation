@@ -22,7 +22,7 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 
 * The ephemeral storage request for the sysdig vuln-runtime-scanner should be set to 2Gi (the default) or 1.5 times the size of the largest image on the cluster, whichever is greater
 
-### Options Available
+### Installation Options
 1. [Basic installation](#basic-installation) (1.No,2.No,3.No,4.No,5.No)
 1. [Install with proxy](#installation-with-proxy)(1.Yes,2.No,3.No,4.No,5.No)
 2. [Installation with Proxy and Custom Image Repo(Internal Registry)](#installation-with-proxy-and-custom-image-repointernal-registry)(1.Yes,2.Yes,3.No,4.No,5.No)
