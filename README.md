@@ -52,7 +52,7 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 ## Basic installation
 NOTE: Please make sure to escape commas for comma delimited lists for cluster tags like below:
 ```
-cluster:test-clusterd\,id:999999\,deployment-id:999999
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
 ```
 ```
 helm repo add sysdig https://charts.sysdig.com
@@ -69,6 +69,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -89,6 +94,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy and Custom Image Repo(Internal Registry)
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -119,6 +129,10 @@ sysdig/sysdig-deploy
 -----------------------
 
 ## Installation with PriorityClass
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -135,6 +149,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy with PriorityClass
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -156,6 +175,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy and Custom Image Repo(Internal Registry) with PriorityClass
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -187,6 +211,10 @@ sysdig/sysdig-deploy
 -----------------------
 
 ## Installation with Secure Boot or SELinux Enabled
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -203,6 +231,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy with Secure Boot or SELinux Enabled
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -224,6 +257,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy and Custom Image Repo(Internal Registry) with Secure Boot or SELinux Enabled
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -253,6 +291,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy and Custom Image Repo(Internal Registry) with Secure Boot or SELinux Enabled with PriorityClass
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -289,6 +332,10 @@ sysdig/sysdig-deploy
 
 
 ## Installation with maxImageSize and ephemeralStorage Increase
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -306,6 +353,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy with maxImageSize and ephemeralStorage Increase
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -328,6 +380,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -364,6 +421,10 @@ sysdig/sysdig-deploy
 
 
 ## Installation with maxImageSize and ephemeralStorage Increase and Secure Boot or SELinux Enabled
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -382,6 +443,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy with maxImageSize and ephemeralStorage Increase and Secure Boot or SELinux Enabled
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -405,6 +471,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and Secure Boot or SELinux Enabled
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -442,6 +513,10 @@ sysdig/sysdig-deploy
 
 
 ## Installation with maxImageSize and ephemeralStorage Increase and Secure Boot or SELinux Enabled and PriorityClass
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -461,6 +536,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy with maxImageSize and ephemeralStorage Increase and Secure Boot or SELinux Enabled and PriorityClass
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
@@ -485,6 +565,11 @@ sysdig/sysdig-deploy
 ```
 
 ## Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and Secure Boot or SELinux Enabled and PriorityClass
+NOTE: Please make sure to escape commas for comma delimited lists for cluster tags and no proxy list like below:
+```
+--set agent.sysdig.settings.tags="cluster:test-clusterd\,id:999999\,deployment-id:999999" \
+--set global.proxy.noProxy="10.67.0.1\,localhost\,127.0.0.1\,.googleapis.com" \
+```
 ```
 helm repo add sysdig https://charts.sysdig.com
 
