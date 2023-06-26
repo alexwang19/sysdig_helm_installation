@@ -29,6 +29,7 @@ kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort
 6. [Installation with Secure Boot or SELinux Enabled](#installation-with-secure-boot-or-selinux-enabled)(1.No,2.No,3.Yes,4.No,5.No)
 7. [Installation with Proxy with Secure Boot or SELinux Enabled](#installation-with-proxy-with-secure-boot-or-selinux-enabled)(1.Yes,2.No,3.Yes,4.No,5.No)
 8. [Installation with Proxy and Custom Image Repo(Internal Registry) with Secure Boot or SELinux Enabled](#installation-with-proxy-and-custom-image-repointernal-registry-with-secure-boot-or-selinux-enabled)(1.Yes,2.Yes,3.Yes,4.No,5.No)
+1. [Installation with Proxy and Custom Image Repo(Internal Registry) with Secure Boot or SELinux Enabled with PriorityClass](#installation-with-proxy-and-custom-image-repointernal-registry-with-secure-boot-or-selinux-enabled-with-priorityclass)(1.Yes,2.Yes,3.Yes,4.Yes,5.No)
 9. [Installation with maxImageSize and ephemeralStorage Increase](#installation-with-maximagesize-and-ephemeralstorage-increase)(1.No,2.No,3.No,4.No,5.Yes)
 10. [Installation with Proxy with maxImageSize and ephemeralStorage Increase](#installation-with-proxy-with-maximagesize-and-ephemeralstorage-increase)(1.Yes,2.No,3.No,4.No,5.Yes)
 11. [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase) (1.Yes,2.No,3.No,4.No,5.Yes)
@@ -174,6 +175,7 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set global.sysdig.accessKey=<Agent Access Key> \
 --set global.clusterConfig.name=<Cluster Name> \
 --set global.sysdig.region=<Sysdig Region(default us3)> \
+--set agent.ebpf.enabled=true \
 -f static-values.yaml \
 sysdig/sysdig-deploy
 ```
@@ -220,6 +222,33 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image> \
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
 --set agent.ebpf.enabled=true \
+-f static-values.yaml \
+sysdig/sysdig-deploy
+```
+
+## Installation with Proxy and Custom Image Repo(Internal Registry) with Secure Boot or SELinux Enabled with PriorityClass
+```
+helm repo add sysdig https://charts.sysdig.com
+
+helm repo update
+
+helm install sysdig-agent --namespace <namespace where sysdig components will be deployed> \
+--set global.sysdig.accessKey=<Agent Access Key> \
+--set global.clusterConfig.name=<Cluster Name> \
+--set global.sysdig.region=<Sysdig Region(default us3)> \
+--set global.proxy.httpProxy=<Http Proxy> \
+--set global.proxy.httpsProxy=<Https Proxy> \
+--set global.proxy.noProxy="<No Proxy, comma delimited list>" \
+--set agent.sysdig.settings.http_proxy.proxy_port=<Proxy Port> \
+--set agent.sysdig.settings.http_proxy.proxy_host=<Proxy Host> \
+--set agent.image.registry=<Internal Registry> \
+--set agent.image.repository=<Internal Sysdig Agent Image> \
+--set agent.image.pullSecrets=<Internal Registry Pull Secret> \
+--set nodeAnalyzer.image.registry=<Internal Registry> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image> \
+--set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
+--set agent.ebpf.enabled=true \
+--set agent.priorityClassName=<Priority class for agent ds, e.g: system-node-critical> \
 -f static-values.yaml \
 sysdig/sysdig-deploy
 ```
