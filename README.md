@@ -3,8 +3,18 @@
 
 ## START HERE
 
+### Quick Start Questionnaire
+1. Do you need proxy enabled?
+2. Are you using a custom image repo (internal registry)?
+3. Do you have SELinux or Secure Boot enabled(not common)?
+4. Do you need to specify a priority class(e.g. system-node-critical)?
+5. Is the largest image running in your cluster larger than 2GB?
+- You can find largest image size by running this command:
+```
+kubectl get nodes -o json | jq -r '.items[].status.images[] | .sizeBytes' | sort -nr | head -1
+```
 
-Options Available
+### Options Available
 
 * [Install with proxy](#installation-with-proxy)
 * [Installation with Proxy and Custom Image Repo(Internal Registry)](#installation-with-proxy-and-custom-image-repointernal-registry)
@@ -24,9 +34,7 @@ Options Available
 * [Installation with Proxy with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#installation-with-proxy-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass)
 * [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass)
 
-
-Do you need proxy enabled?
-
+-------------------------------------
 
 ## Basic installation
 ```
