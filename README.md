@@ -6,23 +6,23 @@
 
 Options Available
 
-[Install with proxy](#installation-with-proxy)
-Installation with Proxy and Custom Image Repo(Internal Registry)
-Basic installation with PriorityClass
-Installation with Proxy with PriorityClass
-Installation with Proxy and Custom Image Repo(Internal Registry) with PriorityClass
-Basic installation with EBF enabled
-Installation with Proxy with EBF enabled
-Installation with Proxy and Custom Image Repo(Internal Registry) with EBF enabled
-Basic installation with maxImageSize and ephemeralStorage Increase
-Installation with Proxy with maxImageSize and ephemeralStorage Increase
-Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase
-Basic installation with maxImageSize and ephemeralStorage Increase and EBF enabled
-Installation with Proxy with maxImageSize and ephemeralStorage Increase and EBF enabled
-Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and EBF enabled
-Basic installation with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass
-Installation with Proxy with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass
-Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass
+* [Install with proxy](#installation-with-proxy)
+* [Installation with Proxy and Custom Image Repo(Internal Registry)](#installation-with-proxy-and-custom-image-repointernal-registry)
+* [Basic installation with PriorityClass](#basic-installation-with-priorityclass)
+* [Installation with Proxy with PriorityClass](#installation-with-proxy-with-priorityclass)
+* [Installation with Proxy and Custom Image Repo(Internal Registry) with PriorityClass](#installation-with-proxy-and-custom-image-repointernal-registry-with-priority-class)
+* [Basic installation with EBF enabled](#basic-installation-with-ebf-enabled)
+* [Installation with Proxy with EBF enabled](#installation-with-proxy-with-ebf-enabled)
+* [Installation with Proxy and Custom Image Repo(Internal Registry) with EBF enabled](#installation-with-proxy-and-custom-image-repointernal-registry-with-ebf-enabled)
+* [Basic installation with maxImageSize and ephemeralStorage Increase](#basic-installation-with-maximagesize-and-ephemeralstorage-increase)
+* [Installation with Proxy with maxImageSize and ephemeralStorage Increase](#installation-with-proxy-with-maximagesize-and-ephemeralstorage-increase)
+* [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase)
+* [Basic installation with maxImageSize and ephemeralStorage Increase and EBF enabled](#basic-installation-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled)
+* [Installation with Proxy with maxImageSize and ephemeralStorage Increase and EBF enabled](#installation-with-proxy-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled)
+* [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and EBF enabled](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled)
+* [Basic installation with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#basic-installation-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass)
+* [Installation with Proxy with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#installation-with-proxy-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass)
+* [Installation with Proxy and Custom Image Repo(Internal Registry) with maxImageSize and ephemeralStorage Increase and EBF enabled and PriorityClass](#installation-with-proxy-and-custom-image-repointernal-registry-with-maximagesize-and-ephemeralstorage-increase-and-ebf-enabled-and-priorityclass)
 
 
 Do you need proxy enabled?
