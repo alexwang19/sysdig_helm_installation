@@ -6,7 +6,7 @@
 
 Options Available
 
-[Install with proxy](#Install with proxy)
+[Install with proxy](#installation-with-proxy)
 Installation with Proxy and Custom Image Repo(Internal Registry)
 Basic installation with PriorityClass
 Installation with Proxy with PriorityClass
