@@ -96,6 +96,8 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set nodeAnalyzer.image.registry=<Internal Registry> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image> \
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
+--set agent.image.tag=<Sysdig Agent Tag (ex: 1.14.1)> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag(ex: 1.5)> \
 -f static-values.yaml \
 sysdig/sysdig-deploy
 ```
@@ -159,6 +161,8 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image> \
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
 --set agent.priorityClassName=<Priority class for agent ds, e.g: system-node-critical> \
+--set agent.image.tag=<Sysdig Agent Tag (ex: 1.14.1)> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag(ex: 1.5)> \
 -f static-values.yaml \
 sysdig/sysdig-deploy
 ```
@@ -221,6 +225,8 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set nodeAnalyzer.image.registry=<Internal Registry> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image> \
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
+--set agent.image.tag=<Sysdig Agent Tag (ex: 1.14.1)> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag(ex: 1.5)> \
 --set agent.ebpf.enabled=true \
 -f static-values.yaml \
 sysdig/sysdig-deploy
@@ -247,6 +253,8 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set nodeAnalyzer.image.registry=<Internal Registry> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.repository=<Internal Sysdig Runtime Scanner Image> \
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
+--set agent.image.tag=<Sysdig Agent Tag (ex: 1.14.1)> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag(ex: 1.5)> \
 --set agent.ebpf.enabled=true \
 --set agent.priorityClassName=<Priority class for agent ds, e.g: system-node-critical> \
 -f static-values.yaml \
@@ -319,6 +327,8 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.settings.maxImageSizeAllowed=<largest image size> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.resources.requests.ephemeral-storage=<storage size request in bytes> \
+--set agent.image.tag=<Sysdig Agent Tag (ex: 1.14.1)> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag(ex: 1.5)> \
 -f static-values.yaml \
 sysdig/sysdig-deploy
 ```
@@ -391,6 +401,8 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.settings.maxImageSizeAllowed=<largest image size> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.resources.requests.ephemeral-storage=<storage size request in bytes> \
+--set agent.image.tag=<Sysdig Agent Tag (ex: 1.14.1)> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag(ex: 1.5)> \
 --set agent.ebpf.enabled=true \
 -f static-values.yaml \
 sysdig/sysdig-deploy
@@ -466,6 +478,8 @@ helm install sysdig-agent --namespace <namespace where sysdig components will be
 --set nodeAnalyzer.nodeAnalyzer.pullSecrets=<Internal Registry Pull Secret> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.settings.maxImageSizeAllowed=<largest image size> \
 --set nodeAnalyzer.nodeAnalyzer.runtimeScanner.resources.requests.ephemeral-storage=<storage size request in bytes> \
+--set agent.image.tag=<Sysdig Agent Tag (ex: 1.14.1)> \
+--set nodeAnalyzer.nodeAnalyzer.runtimeScanner.image.tag=<Sysdig Runtime Scanner Tag(ex: 1.5)> \
 --set agent.ebpf.enabled=true \
 --set agent.priorityClassName=<Priority class for agent ds, e.g: system-node-critical> \
 -f static-values.yaml \
