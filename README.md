@@ -5,7 +5,7 @@
 
 ### Quick Start Questionnaire
 
-<p>Please answer these questions and record answers in following format (1.<answer>,2.<answer>,3.<answer>,4.<answer>,5.<answer>). You can then use Ctrl+F or CMD+F to find appropriate install option with that answer format.
+<p>Please answer these questions and record answers in following format (1.(answer),2.(answer),3.(answer),4.(answer),5.(answer)). You can then use Ctrl+F or CMD+F to find appropriate install option with that answer format.
 example:(1.Yes,2.No,3.No,4.Yes,5.No)
 </p>
 
